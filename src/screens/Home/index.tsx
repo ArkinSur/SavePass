@@ -37,11 +37,12 @@ export function Home() {
   }
 
   function handleFilterLoginData() {
-    // Filter results inside data, save with setSearchListData
+    const filteredResults = data.filter((item) => item.service_name.includes(searchText))
+    setSearchListData(filteredResults);
   }
 
   function handleChangeInputText(text: string) {
-    // Update searchText value
+    setSearchText(text)
   }
 
   useFocusEffect(useCallback(() => {
